@@ -1,0 +1,54 @@
+@use '../styles/colors' as *;
+
+.main {
+  display: flex;
+  // height: calc(100% - 9.6rem);
+  flex: 1;
+  padding-bottom: 13.1rem;
+
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 2.4rem;
+
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex: 1;
+
+
+
+    .explore {
+      box-sizing: content-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 27.4rem;
+      height: 27.4rem;
+      background-color: white;
+      background-clip: content-box;
+      border-radius: 50rem;
+      border: 8.8rem solid transparent;
+      transition: .3s;
+      cursor: pointer;
+      margin-right: -8.8rem;
+      margin-bottom: -8.8rem;
+
+      &:hover {
+        border: 8.8rem solid rgba(255, 255, 255, 0.106);
+      }
+
+      h4 {
+        color: $dark-blue;
+      }
+    }
+
+  }
+
+}
