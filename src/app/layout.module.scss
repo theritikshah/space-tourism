@@ -20,6 +20,12 @@
         left: 6.5rem;
         z-index: 1;
 
+        @media screen and (max-width: "768px") {
+            display: none;
+        }
+
+
+
     }
 
     hr {
@@ -38,6 +44,12 @@
         height: 100%;
         padding: 0 4.8rem;
 
+        @media screen and (max-width: "768px") {
+            flex: none;
+            margin-left: auto;
+
+        }
+
         ul {
             display: flex;
             align-items: center;
@@ -49,8 +61,24 @@
             letter-spacing: 2.7px;
             height: 100%;
 
+            @media screen and (max-width: "768px") {
+                font-size: 1.4rem;
+                letter-spacing: 2.3px;
+
+
+                padding: 0;
+            }
+
+
 
             li {
+
+                @media screen and (max-width: "768px") {
+                    & b {
+                        display: none;
+                    }
+                }
+
                 display: flex;
                 align-items: center;
 
