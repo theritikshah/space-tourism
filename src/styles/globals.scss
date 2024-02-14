@@ -19,6 +19,8 @@ body {
     background-size: cover;
     background-position: center center;
     font-family: 'Barlow Condensed', sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
     @media screen and (max-width: "768px") {
         background-image: url('/assets/home/background-home-tablet.jpg');

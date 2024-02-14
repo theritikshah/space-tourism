@@ -5,6 +5,7 @@ import { Barlow_Condensed, Inter } from "next/font/google";
 
 import styles from "./layout.module.scss";
 import { useState } from "react";
+import Navbar from "./components/Navbar";
 
 export const metadata = {
   title: "Create Next App",
@@ -16,12 +17,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-
-  const handleItemClick = (index: number) => {
-    setActiveIndex(index);
-  };
-
   return (
     <html lang="en">
       <head>
@@ -33,42 +28,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <header className={styles.header}>
-          <div className={styles.logo}>
-            <img src="/assets/shared/logo.svg" alt="logo" />
-          </div>
-          <div className={styles.divider}>
-            <hr />
-          </div>
-          <nav className={styles.menu}>
-            <ul>
-              <li
-                className={activeIndex === 0 ? styles.active : ""}
-                onClick={() => handleItemClick(0)}
-              >
-                <b>00</b>HOME
-              </li>
-              <li
-                className={activeIndex === 1 ? styles.active : ""}
-                onClick={() => handleItemClick(1)}
-              >
-                <b>01</b>DESTINATION
-              </li>
-              <li
-                className={activeIndex === 2 ? styles.active : ""}
-                onClick={() => handleItemClick(2)}
-              >
-                <b>02</b>CREW
-              </li>
-              <li
-                className={activeIndex === 3 ? styles.active : ""}
-                onClick={() => handleItemClick(3)}
-              >
-                <b>03</b>TECHNOLOGY
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Navbar />
         <main className="main">{children}</main>
       </body>
     </html>
