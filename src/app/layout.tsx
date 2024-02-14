@@ -1,10 +1,7 @@
-"use client";
+// "use client";
 
 import "../styles/globals.scss";
-import { Barlow_Condensed, Inter } from "next/font/google";
 
-import styles from "./layout.module.scss";
-import { useState } from "react";
 import Navbar from "./components/Navbar";
 
 export const metadata = {

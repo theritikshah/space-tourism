@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 import styles from "./navbar.module.scss";
@@ -24,6 +26,7 @@ const Navbar = () => {
           {navItems.map((label: string, index: number) => {
             return (
               <NavItem
+                key={label}
                 count={index}
                 activeIndex={activeIndex}
                 onClick={() => handleItemClick(index)}
