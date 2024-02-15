@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.content}>
-        <span className="subheading-1">SO, YOU WANT TO TRAVEL TO</span>
+        <h5 className="subheading-1">SO, YOU WANT TO TRAVEL TO</h5>
         <h1>SPACE</h1>
         <p style={{ color: "#D0D6F9", lineHeight: "3.2rem", margin: 0 }}>
           Let’s face it; if you want to go to space, you might as well genuinely

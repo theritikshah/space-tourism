@@ -2,95 +2,134 @@
 
 .main {
   display: flex;
-  // height: calc(100% - 9.6rem);
+  height: calc(100% - 9.6rem);
   flex: 1;
   padding-bottom: 13.1rem;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+  gap: 10.6rem;
 
   @media screen and (max-width: "1024px") {
-    // justify-content: center;
-    // align-items: center;
+    flex-direction: column;
   }
 
   @media screen and (max-width: "768px") {
-    gap: 10.6rem;
+
+
+    gap: 8rem;
+
   }
 
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex: 1;
-    gap: 2.4rem;
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 2.4rem;
+
+  p {
+    max-width: 44.4rem;
+  }
+
+
+
+  @media screen and (max-width: "1024px") {
+    // margin-top: 10.6rem;
+    align-items: center;
+    justify-content: center;
 
     p {
-      max-width: 44.4rem;
+      text-align: center;
     }
 
-
-
-    @media screen and (max-width: "768px") {
-      margin-top: 10.6rem;
-      align-items: center;
+    &.button {
       justify-content: center;
 
-      p {
-        text-align: center;
-      }
-
-      &.button {
-        justify-content: center;
-
-      }
-
     }
+  }
+
+  @media screen and (max-width: "600px") {
+    margin-top: 2.4rem;
+    gap: 1.6rem;
+  }
+
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 1;
+
+  @media screen and (max-width: "1024px") {
+
+    justify-content: center;
+
+
 
   }
 
-  .button {
+
+
+  .explore {
+    box-sizing: content-box;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex: 1;
+    justify-content: center;
+    align-items: center;
+    width: 27.4rem;
+    height: 27.4rem;
+    background-color: white;
+    background-clip: content-box;
+    border-radius: 50rem;
+    transition: .3s;
+    cursor: pointer;
+    // margin-right: -8.8rem;
+    // margin-bottom: -8.8rem;
 
-    @media screen and (max-width: "768px") {
-
-      justify-content: center;
-
-
-
+    &:hover {
+      box-shadow: 0 0 0 8.8rem rgba(255, 255, 255, 0.106);
+      transform: scale(1.05);
     }
 
 
 
-    .explore {
-      box-sizing: content-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 27.4rem;
-      height: 27.4rem;
-      background-color: white;
-      background-clip: content-box;
-      border-radius: 50rem;
-      transition: .3s;
-      cursor: pointer;
-      // margin-right: -8.8rem;
-      // margin-bottom: -8.8rem;
+
+
+    @media screen and (max-width: "768px") {
+      width: 24.2rem;
+      height: 24.2rem;
 
       &:hover {
-        box-shadow: 0 0 0 8.8rem rgba(255, 255, 255, 0.106);
+        box-shadow: none;
+        transform: scale(1.05);
+      }
+
+    }
+
+    @media screen and (max-width: "600px") {
+      width: 15rem;
+      height: 15rem;
+
+      &:hover {
+        box-shadow: none;
+
         transform: scale(1.05);
       }
 
 
-
       h4 {
-        color: $dark-blue;
+        font-size: 2.4rem;
       }
+
     }
 
+
+    h4 {
+      color: $dark-blue;
+    }
   }
 
 }
