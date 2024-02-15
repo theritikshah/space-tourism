@@ -29,7 +29,7 @@ body {
 
     }
 
-    @media screen and (max-width: "375px") {
+    @media screen and (max-width: "600px") {
         background-image: url('/assets/home/background-home-mobile.jpg');
     }
 }
@@ -42,15 +42,20 @@ body {
     padding: 0 16.5rem;
 
     @media screen and (max-width: "768px") {
-        padding: 0 5.5rem;
+        padding: 0 3.9rem;
     }
 
+    @media screen and (max-width: "600px") {
+        padding: 0 2.4rem;
+
+    }
 
 
 
 }
 
 h1,
+h2,
 h4 {
     font-family: 'Bellefair', serif;
     font-weight: 400;
@@ -60,19 +65,64 @@ h4 {
 
 
 h1 {
-    font-size: 15rem;
+    font-size: 8rem;
     color: white;
 
+
+
+
+    @media screen and (max-width: "600px") {
+
+        font-size: 8rem;
+
+
+    }
+
+
+}
+
+h2 {
+    font-size: 10rem;
+    color: white;
+
+
+    @media screen and (max-width: "768px") {
+        font-size: 8rem;
+
+
+    }
+
+    @media screen and (max-width: "600px") {
+        font-size: 5.6rem;
+
+    }
 }
 
 h4 {
     font-size: 3.2rem;
 }
 
-.subheading-1 {
+
+h5 {
     color: white;
     font-size: 2.8rem;
+
     letter-spacing: 4.72px;
+    margin: 0;
+    font-weight: 100;
+
+
+
+    @media screen and (max-width: "768px") {
+        font-size: 2rem;
+
+
+    }
+
+    @media screen and (max-width: "480px") {
+        font-size: 1.6rem;
+
+    }
 }
 
 p {
