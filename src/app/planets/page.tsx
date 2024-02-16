@@ -9,6 +9,8 @@ async function getData() {
   }
 }
 
+//check build fix
+
 export default async function Planets() {
   const data = await getData();
 
