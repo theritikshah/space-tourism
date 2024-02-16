@@ -3,13 +3,13 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import styles from "./navbar.module.scss";
+import { AnimatePresence, animate, motion } from "framer-motion";
 
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleItemClick = (index: number, value: any) => {
-    console.log(value);
     setActiveIndex(index);
   };
 
@@ -81,11 +81,22 @@ const Navbar = () => {
       <nav className={styles.menu}>
         <ul>{navItemsBtn}</ul>
       </nav>
-      {isMenuOpen && (
-        <nav className={styles.mobile_menu} ref={menuRef}>
-          <ul>{navItemsBtn}</ul>
-        </nav>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.nav
+            transition={{
+              type: "just",
+            }}
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            exit={{ x: 500 }}
+            className={styles.mobile_menu}
+            ref={menuRef}
+          >
+            <ul>{navItemsBtn}</ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
