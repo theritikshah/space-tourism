@@ -1,5 +1,9 @@
 import styles from "./page.module.scss";
 
+export const metadata = {
+  title: "Frontend Mentor | Space tourism website",
+};
+
 export default function Home() {
   return (
     <main className={styles.main}>

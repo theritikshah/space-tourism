@@ -6,10 +6,6 @@ import "../styles/globals.scss";
 
 import Navbar from "./components/Navbar";
 
-export const metadata = {
-  title: "Frontend Mentor | Space tourism website",
-};
-
 export default function RootLayout({
   children,
 }: {
