@@ -1,6 +1,6 @@
 import { useData } from "@/hooks/useData";
 
-export default async function technology() {
+export default async function Technology() {
   const data = await useData("technology");
   return (
     <div>
