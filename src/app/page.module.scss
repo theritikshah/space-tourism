@@ -3,7 +3,7 @@
 .main {
   display: flex;
   height: calc(100% - 9.6rem);
-  flex: 1;
+  // flex: 1;
   padding-bottom: 13.1rem;
   // flex-wrap: wrap;
   gap: 10.6rem;
@@ -49,6 +49,13 @@
       justify-content: center;
 
     }
+  }
+
+  @media screen and (max-width: "768px") {
+
+    margin-top: 10.6rem;
+
+
   }
 
   @media screen and (max-width: "600px") {
