@@ -2,23 +2,21 @@
 
 .main {
   display: flex;
-  // height: calc(100% - 9.6rem);
+  gap: 10.6rem;
   margin-top: auto;
   padding-bottom: 13.1rem;
-  gap: 10.6rem;
 
   @media screen and (max-width: "1024px") {
+    margin-top: 10.6rem;
     flex-direction: column;
   }
 
   @media screen and (max-width: "768px") {
-    margin-top: 10.6rem;
     gap: 8rem;
   }
 
   @media screen and (max-width: "600px") {
     margin-top: 4.8rem;
-    gap: 8rem;
   }
 
 
@@ -29,17 +27,13 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  flex: 1;
   gap: 2.4rem;
 
   p {
     max-width: 44.4rem;
   }
 
-
-
   @media screen and (max-width: "1024px") {
-    // margin-top: 10.6rem;
     align-items: center;
     justify-content: center;
 
@@ -51,13 +45,6 @@
       justify-content: center;
 
     }
-  }
-
-  @media screen and (max-width: "768px") {
-
-    // margin-top: 10.6rem;
-
-
   }
 
   @media screen and (max-width: "600px") {
@@ -73,38 +60,28 @@
   flex: 1;
 
   @media screen and (max-width: "1024px") {
-
     justify-content: center;
-
-
-
   }
 
 
 
   .explore {
-    box-sizing: content-box;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 27.4rem;
-    height: 27.4rem;
-    background-color: white;
     background-clip: content-box;
+    background-color: white;
     border-radius: 50rem;
-    transition: .3s;
+    box-sizing: content-box;
     cursor: pointer;
-    // margin-right: -8.8rem;
-    // margin-bottom: -8.8rem;
+    display: flex;
+    height: 27.4rem;
+    justify-content: center;
+    transition: .3s;
+    width: 27.4rem;
 
     &:hover {
       box-shadow: 0 0 0 8.8rem rgba(255, 255, 255, 0.106);
       transform: scale(1.05);
     }
-
-
-
-
 
     @media screen and (max-width: "768px") {
       width: 24.2rem;
@@ -123,17 +100,13 @@
 
       &:hover {
         box-shadow: none;
-
         transform: scale(1.05);
       }
-
 
       h4 {
         font-size: 2.4rem;
       }
-
     }
-
 
     h4 {
       color: $dark-blue;
