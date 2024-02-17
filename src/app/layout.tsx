@@ -1,3 +1,7 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 import "../styles/globals.scss";
 
 import Navbar from "./components/Navbar";
@@ -11,6 +15,31 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
+  const bgImage = () => {
+    const backgrounds: { [key: string | number]: string } = {
+      destination: "/assets/destination/background-destination",
+      crew: "/assets/crew/background-crew",
+      technology: "/assets/technology/background-technology",
+    };
+
+    const keyword = Object.keys(backgrounds).find((key) =>
+      pathname.includes(key)
+    );
+
+    if (keyword) {
+      const imageUrl = backgrounds[keyword];
+      return {
+        "--background-image-desktop": `url('${imageUrl}-desktop.jpg')`,
+        "--background-image-tablet": `url('${imageUrl}-tablet.jpg')`,
+        "--background-image-mobile": `url('${imageUrl}-mobile.jpg')`,
+      } as React.CSSProperties;
+    }
+
+    return {};
+  };
+
   return (
     <html lang="en">
       <head>
@@ -28,7 +57,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body style={bgImage()}>
         <Navbar />
         <main className="main">{children}</main>
       </body>
