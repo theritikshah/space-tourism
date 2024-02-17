@@ -2,10 +2,9 @@
 
 .main {
   display: flex;
-  height: calc(100% - 9.6rem);
-  // flex: 1;
+  // height: calc(100% - 9.6rem);
+  margin-top: auto;
   padding-bottom: 13.1rem;
-  // flex-wrap: wrap;
   gap: 10.6rem;
 
   @media screen and (max-width: "1024px") {
@@ -13,10 +12,13 @@
   }
 
   @media screen and (max-width: "768px") {
-
-
+    margin-top: 10.6rem;
     gap: 8rem;
+  }
 
+  @media screen and (max-width: "600px") {
+    margin-top: 4.8rem;
+    gap: 8rem;
   }
 
 
@@ -53,13 +55,12 @@
 
   @media screen and (max-width: "768px") {
 
-    margin-top: 10.6rem;
+    // margin-top: 10.6rem;
 
 
   }
 
   @media screen and (max-width: "600px") {
-    margin-top: 4.8rem;
     gap: 1.6rem;
   }
 
