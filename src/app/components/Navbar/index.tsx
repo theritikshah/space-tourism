@@ -38,23 +38,7 @@ const Navbar = () => {
   const menuBtnRef = useRef<HTMLImageElement>(null);
   const menuRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuBtnRef.current &&
-        !menuBtnRef.current.contains(event.target as Node) &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node)
-      ) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  useDocumentClick(() => setIsMenuOpen(false), [menuBtnRef, menuRef]);
 
   return (
     <header className={styles.header}>
