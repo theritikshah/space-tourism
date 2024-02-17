@@ -4,17 +4,23 @@ import React, { useEffect, useRef, useState } from "react";
 
 import styles from "./navbar.module.scss";
 import { AnimatePresence, animate, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import NavItem from "./NavItem";
+import useDocumentClick from "@/hooks/useDocumentClick";
 
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const router = useRouter();
+
   const handleItemClick = (index: number, value: any) => {
     setActiveIndex(index);
+    router.push(value);
   };
 
   const navItems = [
-    { label: "HOME", value: "home" },
+    { label: "HOME", value: "" },
     { label: "DESTINATION", value: "destination" },
     { label: "CREW", value: "crew" },
     { label: "TECHNOLOGY", value: "technology" },
@@ -24,7 +30,7 @@ const Navbar = () => {
     ({ label, value }: { label: string; value: any }, index: number) => {
       return (
         <NavItem
-          key={label}
+          key={value}
           count={index}
           activeIndex={activeIndex}
           onClick={() => handleItemClick(index, value)}
@@ -86,33 +92,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-function NavItem({
-  onClick,
-  label,
-  value,
-  count,
-  activeIndex,
-}: {
-  onClick: Function | (() => {});
-  label: string;
-  count: number;
-  value?: string | number;
-  activeIndex: number;
-}) {
-  return (
-    <li
-      className={activeIndex === count ? styles.active : ""}
-      onClick={() => onClick()}
-    >
-      <b>{`0${count}`}</b>
-      {label}
-    </li>
-  );
-}
-
-{
-  /* <nav className={styles.mobile_menu}>
-<ul>{navItemsBtn}</ul>
-</nav> */
-}
