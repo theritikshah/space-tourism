@@ -1,11 +1,14 @@
 import { useData } from "@/hooks/useData";
+import { redirect } from "next/navigation";
 
 export default async function Destinations() {
   const data = await useData("destinations");
-  return (
-    <div>
-      <h1>Data</h1>
-      {data && <p>{JSON.stringify(data)}</p>}
-    </div>
-  );
+
+  if (data && data?.length) {
+    redirect(`/destination/${data[0].name}`);
+  } else {
+    redirect("/");
+  }
+
+  return <></>;
 }
