@@ -1,48 +1,45 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+import { AnimatePresence, animate, motion } from "framer-motion";
+import { useRouter, usePathname } from "next/navigation";
 
 import styles from "./navbar.module.scss";
-import { AnimatePresence, animate, motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+
 import NavItem from "./NavItem";
 import useDocumentClick from "@/hooks/useDocumentClick";
 
 const Navbar = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const router = useRouter();
+  const pathname = usePathname();
 
-  const handleItemClick = (index: number, value: any) => {
-    setActiveIndex(index);
-    router.push(value);
-  };
+  const menuBtnRef = useRef<HTMLImageElement>(null);
+  const menuRef = useRef<HTMLElement>(null);
 
-  const navItems = [
+  const navItems: { label: string; value: any }[] = [
     { label: "HOME", value: "" },
     { label: "DESTINATION", value: "destination" },
     { label: "CREW", value: "crew" },
     { label: "TECHNOLOGY", value: "technology" },
   ];
 
-  const navItemsBtn = navItems.map(
-    ({ label, value }: { label: string; value: any }, index: number) => {
-      return (
-        <NavItem
-          key={value}
-          count={index}
-          activeIndex={activeIndex}
-          onClick={() => handleItemClick(index, value)}
-          label={label}
-          value={value}
-        />
-      );
-    }
-  );
+  const navItemsBtn = navItems.map(({ label, value }, index: number) => {
+    const isActive =
+      (!value && pathname === "/") || (value && pathname.includes(value));
 
-  const menuBtnRef = useRef<HTMLImageElement>(null);
-  const menuRef = useRef<HTMLElement>(null);
+    return (
+      <NavItem
+        key={value}
+        count={index}
+        isActive={isActive}
+        onClick={() => router.push(value)}
+        label={label}
+        value={value}
+      />
+    );
+  });
 
   useDocumentClick(() => setIsMenuOpen(false), [menuBtnRef, menuRef]);
 
@@ -65,7 +62,6 @@ const Navbar = () => {
         alt="menu-button"
         onClick={() => {
           setIsMenuOpen(!isMenuOpen);
-          console.log("click");
         }}
       />
       <nav className={styles.menu}>

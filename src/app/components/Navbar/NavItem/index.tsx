@@ -5,19 +5,16 @@ export default function NavItem({
   label,
   value,
   count,
-  activeIndex,
+  isActive,
 }: {
   onClick: Function | (() => {});
   label: string;
   count: number;
   value?: string | number;
-  activeIndex: number;
+  isActive: boolean;
 }) {
   return (
-    <li
-      className={activeIndex === count ? styles.active : ""}
-      onClick={() => onClick()}
-    >
+    <li className={isActive ? styles.active : ""} onClick={() => onClick()}>
       <b>{`0${count}`}</b>
       {label}
     </li>
