@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  env: {
+    HOST_ADDRESS: "http://localhost:3000",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
