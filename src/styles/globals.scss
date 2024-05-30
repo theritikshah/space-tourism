@@ -41,6 +41,27 @@ body {
     }
 }
 
+
+p {
+    font-weight: 400;
+    font-size: 1.8rem;
+    // color: white;
+    color: #D0D6F9;
+    line-height: 3.2rem;
+    margin: 0
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #383B4B;
+    margin: 1em 0;
+    padding: 0;
+    width: 100%;
+}
+
 .main {
     display: flex;
     flex-direction: column;
@@ -130,10 +151,4 @@ h5 {
         font-size: 1.6rem;
 
     }
-}
-
-p {
-    font-weight: 400;
-    font-size: 1.8rem;
-    color: white;
 }
